@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="clim.css">
+    <title>Document</title>
+</head>
+
+
+<style>
+    /* .preloader {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1001;
+        background-color: black;
+       
+
+    } */
+
+    #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 9999;
+
+    }
+
+    /* .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1001;
+        transition: opacity 1s ease, visibility 1s ease;
+       
+    } */
+
+    /* .preloader>* {
+        transition: ease 250ms;
+    }
+
+    .preloader.loaded>* {
+        opacity: 0;
+    }
+
+    .preloader.loaded {
+        transition-delay: 250ms;
+        transform: translateY(100%);
+    } */
+
+
+
+    .phase {
+        opacity: 0;
+        font-size: 24px;
+
+        color: #000;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+    }
+
+
+
+    .content {
+        display: none;
+        text-align: center;
+    }
+
+    .phase1 .clim31 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* .clim1 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        border-radius: 50%;
+    } */
+
+    .phase1 h1 {
+        font-size: 50px;
+        color: darkgreen;
+    }
+
+    /* Colors for phase3 */
+    /* .phase1 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        animation: move-up 2s ease-in-out infinite;
+
+
+    } */
+
+
+    /* @keyframes move-up {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-50px);
+        }
+    } */
+
+    .phase4 {
+        animation: compress-enlarge 2s forwards;
+    }
+
+    @keyframes compress-enlarge {
+        0% {
+            transform: scale(2);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(0.5);
+            opacity: 1;
+        }
+
+        /* 75% {
+            transform: scale(1.5);
+            opacity: 1;
+        } */
+
+        100% {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+
+
+
+    .green {
+        background: greenyellow;
+        height: 100vh;
+    }
+
+    .red {
+        background: red;
+        height: 100vh;
+    }
+
+    .black {
+        background: black;
+        height: 100vh;
+    }
+
+    .pink {
+        background: plum;
+        height: 100vh;
+    }
+
+    .purple {
+        background: purple;
+        height: 100vh;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+    .clim31 {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        /* Ensure enough space for vertical centering */
+    }
+
+    .clim31 h1 {
+        font-size: 5rem;
+        font-weight: 500;
+    }
+
+    .clim11 {
+        background: linear-gradient(170deg, hsl(0, 100%, 50%), hsl(330, 100%, 70%), hsl(270, 100%, 50%), hsl(120, 100%, 50%));
+        width: 90px;
+        /* Fixed width for visibility */
+        height: 7px;
+        /* Increased height */
+        align-self: center;
+    }
+
+    .clim41 {
+        display: flex;
+        justify-content: center;
+        /* Center items horizontally */
+        width: 100%;
+    }
+
+    .clim41 h1 {
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+
+    /* Basic page styles */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    /* The Preload container */
+    /* .preload-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 1s ease-out;
+    }
+ */
+
+
+
+    /* Phase 1: Initial preload animation (spinning circle) */
+    /* .phase-1 {
+        width: 60px;
+        height: 60px;
+        display: flex;
+       
+    } */
+
+    /* Phase 2: Progress bar */
+    /* .phase-2 {
+        display: none;
+        
+        overflow: hidden;
+    } */
+
+    /* .phase-2 .progress-bar {
+        width: 0;
+        height: 100%;
+        background: #3498db;
+        transition: width 2s ease-in-out;
+    } */
+
+    /* Phase 3: Fading text */
+    .phase-3 {
+        display: none;
+        /* margin-top: 20px; */
+        font-size: 24px;
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+    }
+
+    /* Keyframes for spinning animation */
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Keyframes for fade-in effect */
+    /* @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    } */
+
+    /* Main content hidden initially */
+    .main-content {
+        display: none;
+    }
+
+
+    .static-c {
+        font-size: 3rem;
+        /* Make C large */
+        font-weight: bold;
+        color: #fff;
+        background: transparent;
+        position: absolute;
+        /* Position it in the center */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Center align */
+        z-index: 1;
+        /* Make sure it's behind the circle */
+    }
+
+    /* The container for the flipping circle */
+    .flipping-circle-container {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        animation: flip 4s infinite;
+        /* Flip animation for the circle */
+        z-index: 2;
+        /* Make sure the circle is above the C */
+        transform-style: preserve-3d;
+        /* Ensures the 3D transform affects only the circle */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flipping-circle {
+        width: 100%;
+        height: 100%;
+        border: 10px solid blue;
+
+
+
+        border-radius: 50%;
+
+        position: absolute;
+
+        transform-origin: center;
+
+        backface-visibility: hidden;
+
+    }
+
+
+
+
+    .phase-3 {
+        /* width: 100%;
+        height: 100vh; */
+        grid-template-columns: repeat(5, 1fr);
+        display: grid;
+    }
+
+    .green {
+        background: greenyellow;
+        animation-delay: 1.2s;
+
+    }
+
+    .red {
+        background: red;
+        animation-delay: 1.6s;
+
+    }
+
+    .black {
+        background: black;
+        animation-delay: 0.8s;
+
+    }
+
+    .pink {
+        background: plum;
+        animation-delay: 0s;
+    }
+
+    .purple {
+        background: purple;
+        animation-delay: 0.4s;
+    }
+
+
+
+
+    /* Keyframes for 90-degree flip animation */
+    @keyframes flip {
+        0% {
+            transform: rotateY(0deg) rotateX(0deg);
+
+        }
+
+        25% {
+            transform: rotateY(180deg) rotateX(0deg);
+
+        }
+
+        50% {
+            transform: rotateY(180deg) rotateX(180deg);
+
+        }
+
+        75% {
+            transform: rotateY(0deg) rotateX(180deg);
+
+        }
+
+        100% {
+            transform: rotateY(0deg) rotateX(0deg);
+
+        }
+    }
+
+    .phase-6 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        z-index: 10;
+
+
+
+    }
+
+    /* Each Grid Item */
+    .grid-item {
+        width: 100%;
+        height: 100%;
+        background-color: #61dafb;
+        transform: translateY(100%);
+        animation: move-up 2s ease-out forwards;
+    }
+
+    .grid-item:nth-child(1) {
+        background-color: plum;
+        animation-delay: 0s;
+        --move-up-height: 100px;
+    }
+
+    .grid-item:nth-child(2) {
+        background-color: purple;
+        animation-delay: 0.2s;
+        --move-up-height: 200px;
+    }
+
+    .grid-item:nth-child(3) {
+        background-color: black;
+        animation-delay: 0.4s;
+        --move-up-height: 300px;
+    }
+
+    .grid-item:nth-child(4) {
+        background-color: rgb(70, 243, 70);
+        animation-delay: 0.6s;
+        --move-up-height: 400px;
+    }
+
+    .grid-item:nth-child(5) {
+        background-color: red;
+        animation-delay: 0.8s;
+        --move-up-height: 500px;
+    }
+
+    /* Keyframes for First Movement (Staggered Up) */
+    @keyframes move-up {
+        0% {
+            transform: translateY(100%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* Keyframes for Second Movement (Off-Screen Up) */
+    @keyframes move-reveal {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+
+    .phase5 {
+        opacity: 0;
+        font-size: 24px;
+        /* margin: 10px; */
+        color: #000;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+    }
+
+    .static-c {
+        font-size: 4rem;
+        font-weight: bold;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        /* Ensure the "C" is on top of the circle */
+    }
+
+    /* Container for the circle with the gradient border */
+    .circle-container {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d;
+    }
+
+    /* Circle with only the gradient border */
+    .circle {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        border: 20px solid transparent;
+        /* Transparent inside */
+        background: transparent;
+        /* No background */
+        background-clip: content-box;
+        /* Ensures that the background is not visible inside */
+        animation: flip 4s infinite ease-in-out;
+    }
+
+
+
+    /* Gradient Border for the circle */
+    .circle::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 10px solid;
+        border-image: linear-gradient(90deg,
+                hsl(0, 100%, 50%),
+                hsl(330, 100%, 70%),
+                hsl(270, 100%, 50%),
+                hsl(120, 100%, 50%)) 1;
+    }
+
+    @keyframes flip {
+        0% {
+            transform: rotateY(0deg) rotateX(0deg);
+
+        }
+
+        25% {
+            transform: rotateY(180deg) rotateX(0deg);
+
+        }
+
+        50% {
+            transform: rotateY(180deg) rotateX(180deg);
+
+        }
+
+        75% {
+            transform: rotateY(0deg) rotateX(180deg);
+
+        }
+
+        100% {
+            transform: rotateY(0deg) rotateX(0deg);
+
+        }
+    }
+
+    /* Keyframes for flip animation */
+    /* @keyframes flip {
+        0% {
+            transform: rotateY(0deg);
+        }
+
+        50% {
+            transform: rotateY(180deg);
+        }
+
+        100% {
+            transform: rotateY(360deg);
+        }
+    } */
+</style>
+
+
+<div id="preloader" class="preloader">
+    <div id="phase1" class="phase phase4">
+        <div class="clim31">
+            <h1>Clim</h1>
+            <div class="clim11"></div>
+            <h1>Studio</h1>
+        </div>
+    </div>
+    <div id="phase2" class="phase image-container">
+        <div class="circle-container">
+            <!-- Circle with Gradient Border -->
+
+            <div class="circle"></div>
+
+            <!-- Static "C" in the center -->
+            <div class="static-c">C</div>
+        </div>
+        <!-- <div class="progress-bar">
+            <div class="static-c">C</div>
+
+
+            <div class="flipping-circle-container">
+
+                <div class="flipping-circle"></div>
+            </div>
+        </div> -->
+    </div>
+    <div id="phase3" class="phase phase-6">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+
+
+    </div>
+</div>
+
+<body id="content">
+
+
+
+    <header class="">
+
+        <div class="logo"><img src="images/images1.jpeg"> </div>
+        <div class="hamburger" id="hamburger" onclick="toggleDropdown()">
+            <div class="one">
+                <!-- <div class="white"></div>
+                <div class="ponk"></div> -->
+            </div>
+            <div></div>
+            <div class="three">
+                <!-- <div class="rod"></div>
+                <div class="green"></div> -->
+            </div>
+        </div>
+        <nav id="navbar" class="nav-show">
+            <ul>
+                <li><a href="#">Work</a>
+                    <div class="home--title1"></div>
+                </li>
+                <li><a href="#">About</a>
+                    <div class="home--title2"></div>
+                </li>
+                <li><a href="#">Services</a>
+                    <div class="home--title3"></div>
+                </li>
+                <li><a href="#">Job</a>
+                    <div class="home--title4"></div>
+                </li>
+                <li><a href="#">Contact</a>
+                    <div class="home--title5"></div>
+                </li>
+            </ul>
+        </nav>
+        <div id="dropdownMenu" class="dropdown-menu" onclick="closeDropdown(event)">
+            <ul class="">
+                <li><a href="#">Work</a>
+                    <div class="home--title1"></div>
+                </li>
+                <li><a href="#">About</a>
+                    <div class="home--title2"></div>
+                </li>
+                <li><a href="#">Services</a>
+                    <div class="home--title3"></div>
+                </li>
+                <li><a href="#">Job</a>
+                    <div class="home--title4"></div>
+                </li>
+                <li><a href="#">Contact</a>
+                    <div class="home--title5"></div>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+
+
+    <!-- <header class="container header">
+        <img src="images/images1.jpeg">
+        <nav>
+            <ul>
+                <li class="one">
+                    <a href="">Work</a>
+                    <div class="home--title1"></div>
+                </li>
+                <li class="two">
+                    <a href="">About</a>
+                    <div class="home--title2"></div>
+                </li>
+
+                <li class="three">
+                    <a href="">Services</a>
+                    <div class="home--title3"></div>
+                </li>
+
+                <li class="four">
+                    <a href="">Jobs</a>
+                    <div class="home--title4"></div>
+                </li>
+
+                <li class="five">
+                    <a href="">Contact</a>
+                    <div class="home--title5"></div>
+                </li>
+            </ul>
+
+        </nav>
+
+
+
+
+
+    </header> -->
+    <main class="container">
+        <div class="home-h1">
+            <h1>
+                Driven by Collaboration,<br> Fueled by Passion,<br> & Committed to Excellence.
+            </h1>
+
+        </div>
+        <div class="home-2">
+            <div class="button-container">
+                <button class="animated-button">
+                    <span class="button-text">Scroll Down</span>
+                    <span class="button-dot">•</span>
+                </button>
+            </div>
+            <!-- <button>
+                <a href="">Scroll Down</a>
+            </button> -->
+        </div>
+    </main>
+
+
+
+    <section>
+
+        <div class="carousel-container">
+            <div class="carousel-1 ">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-item">
+                            <video src="fil5.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="1036441112-preview.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="1110378501-preview.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="3485680663-preview.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="3529545287-preview.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="3650010889-preview.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                        <div class="carousel-item">
+                            <video src="fil3.mp4" autoplay muted loop></video>
+                        </div>
+                    </div>
+
+                    <button class="custom-carousel-button">
+                        <div class="flex-but">
+                            <div class="but">
+                                <i class='bx bx-left-arrow-alt'></i>
+                                <i class='bx bx-right-arrow-alt'></i>
+                            </div>
+                            <p>Drag</p>
+                        </div>
+
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="value section " id="value">
+        <div class="value--container  grid">
+
+            <div class="value--content container">
+                <div class="value--data">
+                    <span class="section--subtitle ">Our Core Values</span>
+
+
+                </div>
+
+                <div class="value--accordion">
+
+
+                    <div class="value--accordion">
+
+
+                        <div class="value--accordion">
+                            <div class="value--accordion-item">
+                                <div class="value--accordion-header">
+
+                                    <h3 class="value--accordion-title">
+                                        Creativity
+                                    </h3>
+                                    <div class="value--accordion-arrow">
+                                        <i class='bx bx-arrow-back arrow'></i>
+                                    </div>
+                                </div>
+                                <div class="clim-3">
+                                    <div class="value--accordion-content">
+                                        <div class="clim-1">
+                                            <div class="clim-2">
+                                                <h1>Creative is the heartbeat of Clim Studio</h1>
+                                                <p class="value--accordion-description">
+                                                    It shapes every stage of our work, from brainstorming to
+                                                    execution.
+                                                    We
+                                                    transform bold ideas into compelling visuals that reflect the
+                                                    essence of
+                                                    each project.
+                                                    This Commitment to imaginative thinking not only enhances our
+                                                    final
+                                                    outcomes
+                                                    but also enriches the entire creative process.
+                                                </p>
+                                            </div>
+                                            <div class="img-2">
+                                                <video src="fil5.mp4" autoplay muted loop></video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="value--accordion one">
+                                <div class="value--accordion-item">
+                                    <div class="value--accordion-header">
+
+                                        <h3 class="value--accordion-title">
+                                            Collaboration
+                                        </h3>
+                                        <div class="value--accordion-arrow">
+                                            <i class='bx bx-arrow-back arrow'></i>
+                                        </div>
+                                    </div>
+                                    <div class="clim-3">
+                                        <div class="value--accordion-content">
+                                            <div class="clim-1">
+                                                <div class="clim-2">
+                                                    <h1>We believe in the power of Connection.</h1>
+                                                    <p class="value--accordion-description">
+                                                        Collaboration fosters a vibrant environment where diverse
+                                                        talents
+                                                        come
+                                                        together to share ideas and build on each other's strengths.
+                                                        This
+                                                        synergy ignites creativity and drives us to produce
+                                                        exceptional
+                                                        work
+                                                        that resonates with audiences and clients alike.
+                                                    </p>
+                                                </div>
+                                                <div class="img-2">
+                                                    <video src="fil5.mp4" autoplay muted loop></video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="value--accordion type">
+                                <div class="value--accordion-item">
+                                    <div class="value--accordion-header">
+
+                                        <h3 class="value--accordion-title">
+                                            Craftsmanship
+                                        </h3>
+                                        <div class="value--accordion-arrow">
+                                            <i class='bx bx-arrow-back arrow'></i>
+                                        </div>
+                                    </div>
+                                    <div class="clim-3">
+
+                                        <div class="value--accordion-content">
+                                            <div class="clim-1">
+                                                <div class="clim-2">
+                                                    <h1>For us, every step is an opportunity to make something
+                                                        extraordinary <span>🚀</span>
+                                                    </h1>
+
+                                                    <p class="value--accordion-description">
+                                                        From the creative work to the production process, every
+                                                        detail
+                                                        is
+                                                        handled with precision and care ensuring a seamless and
+                                                        artfully
+                                                        executed experience from start to finish. Our commitment to
+                                                        quality
+                                                        extends to how we treat our clients, crafting strong
+                                                        relationships
+                                                        built
+                                                        on trust and a shared pursuit of excellence.
+                                                    </p>
+                                                </div>
+                                                <div class="img-2">
+                                                    <video src="fil5.mp4" autoplay muted loop></video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cursor" id="cursor"></div>
+
+    <div class="clim-sub ">
+        <h1 class="container">
+            Our Story in images
+        </h1>
+        <div class="video-con">
+
+            <div class="video-container ">
+                <div class="videos video1 ">
+
+
+
+
+                    <video src="fil5.mp4" autoplay muted loop></video>
+
+                    <video src="1036441112-preview.mp4" autoplay muted loop></video>
+
+                    <video src="1110378501-preview.mp4" autoplay muted loop></video>
+
+                    <video src="3485680663-preview.mp4" autoplay muted loop></video>
+
+                    <video src="3529545287-preview.mp4" autoplay muted loop></video>
+
+                    <video src="3650010889-preview.mp4" autoplay muted loop></video>
+
+                    <video src="1036441112-preview.mp4" autoplay muted loop></video>
+
+                    <video src="1110378501-preview.mp4" autoplay muted loop></video>
+
+                    <video src="3485680663-preview.mp4" autoplay muted loop></video>
+
+                    <video src="3529545287-preview.mp4" autoplay muted loop></video>
+
+                    <video src="3650010889-preview.mp4" autoplay muted loop></video>
+
+                </div>
+
+            </div>
+            <button class="animated-button1">
+                <div class="flex-but">
+                    <div class="but">
+                        <i class='bx bx-left-arrow-alt'></i>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                    <p>Drag</p>
+                </div>
+            </button>
+        </div>
+
+
+
+    </div>
+    <div class="wrapper">
+        <div class="grid-container" id="grid-container">
+            <div class="grid-item1 image" id="image-item">
+                <img src="images/img1-removebg-preview.png" alt="Sticky Image">
+            </div>
+            <div class="grid-item1 text">
+                <div class="product-showcase">
+                    <h1>Our Story in <br>Words</h1>
+
+                    <p>Catalan-born Climent Canal, better Known as Clim, has been forging his own autonomous path in
+                        the
+                        animation industry since 2010.</p>
+                    <p>His first personal project, make it better, went viral in 2011 - amassing over 2 million
+                        views
+                        worldwide. Soon after, he co-founded Sebas&Clim, working hands-on with illustration, motion,
+                        and
+                        mixed-media projects. He rapidly grew into a formidable Mixed-Media Director, before
+                        deciding to
+                        fly solo... And, thus!</p>
+                    <p>Clim Studio was born. He's since raised into a full-blown production company that wins
+                        international awards and works with the best brands from across the globe.</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="after-scroll">
+            You've scrolled past the content!
+        </div> -->
+    </div>
+
+    <!-- <div class="product-container">
+
+        <div class="  ">
+            <div class="sidebar-category">
+                <img src="images/img1-removebg-preview.png">
+            </div>
+        </div>
+        <div class="product-box">
+            <div class="product-minimal">
+                <div class="product-showcase">
+                    <h1>Our Story in <br>Words</h1>
+
+                    <p>Catalan-born Climent Canal, better Known as Clim, has been forging his own autonomous path in
+                        the
+                        animation industry since 2010.</p>
+                    <p>His first personal project, make it better, went viral in 2011 - amassing over 2 million
+                        views
+                        worldwide. Soon after, he co-founded Sebas&Clim, working hands-on with illustration, motion,
+                        and
+                        mixed-media projects. He rapidly grew into a formidable Mixed-Media Director, before
+                        deciding to
+                        fly solo... And, thus!</p>
+                    <p>Clim Studio was born. He's since raised into a full-blown production company that wins
+                        international awards and works with the best brands from across the globe.</p>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+    <section>
+
+        <div class="clim-sub1 container">
+            <h2>
+                An International,<br> Handpicked Team
+            </h2>
+            <div class="clim4">
+                <div class="clim3">
+                    <h1>Clim</h1>
+                    <div class="clim1"></div>
+                    <h1>Studio</h1>
+                </div>
+            </div>
+
+            <!-- <div class="sub-1">
+                <img src="CSREB_SC090_sh030_f0269_CloseUp_00000.png.webp.webp">
+            </div> -->
+        </div>
+
+
+
+
+    </section>
+    <section class="sub-3 container">
+        <div class="sub-p1">
+            <div class="sub-p">
+                <p>We're a tight-knit core team backed by an ever-growing pool of the best freelance artists, each
+                    bringing
+                    their own flair and expertise to every project. With each new challenge, Clim hand-selects
+                    the
+                    perfect
+                    mix,
+                    pairing the unique strengths of our core team with the talents of top-tier freelancers
+                    worldwide.
+                    Together,
+                    we build a team as dynamic as our work-adaptable, bold, and crafted for each project's
+                    vision.
+                </p>
+            </div>
+        </div>
+        <button>
+            <a href="">Join Our Freelance Family</a>
+        </button>
+
+    </section>
+
+
+
+    <div class=" sub4 container">
+        <h1>Exceptional work requires a<br>meticulous process from the <br>core idea all the way<br> through to
+            final
+            delivery <span>See All Services <i class='bx bx-arrow-back arrow'></i></span></h1>
+
+    </div>
+
+    <div id="moving-text">
+        <div class="text1">
+            <div class="col2"></div>
+            <h1>Motion Graphics</h1>
+            <div class="col1"></div>
+            <h1>Creative Direction</h1>
+            <div class="col2"></div>
+            <h1>End to End Production</h1>
+            <div class="col1"></div>
+        </div>
+    </div>
+    <div id="video-containero" class="video-containero">
+        <video autoplay muted loop>
+            <source src="1110378501-preview.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+
+
+
+    <section class="sub5">
+        <div class="sub5-1 container">
+            <h1>We've had the honor of being<br> featured in top industry<br> media and the thrill of<br> sharing
+                our
+                voice as
+                speakers<br> and jurors at leading festivals<br> and creative events.</h1>
+        </div>
+
+        <div class="grid2 container">
+            <div class="grid1">
+                <h1>Recognitions</h1>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="grid1">
+                <h1>
+                    Talks
+                </h1>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+                <div class="grid-sub">
+
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+                        <span>GOLD: People's Award</span>
+                    </div>
+                </div>
+
+
+                <h1 class="grid-22">Jurying</h1>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+
+                    </div>
+                </div>
+                <div class="grid-sub">
+                    <div class="grid-sub1">
+                        <h2>2024</h2>
+                    </div>
+                    <div class="grid-sub2">
+                        <h3>
+                            Lovie Awards
+                        </h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="fot1">
+            <h1>
+                👋 Give us a shout and<br> let's collaborate.
+            </h1>
+
+            <span>Contact Us <i class='bx bx-arrow-back arrow'></i></span>
+        </div>
+
+        <div class="fot2">
+            <h2>
+                Sign up to our quaterly Newsletter:
+            </h2>
+            <div class="search-container"> <input type="text" class="search-input" placeholder="your email here...">
+                <button class="search-button"> <i class='bx bx-arrow-back arrow'></i> </button>
+            </div>
+            <!-- <form action="" class="home--search">
+                <i class='bx bxs-map'></i>
+                <input type="search" placeholder="Your email here..." class="home--search-input">
+                <button class="button">Search</button>
+            </form> -->
+        </div>
+
+        <div class="fot3">
+            <div class="fot4">
+                <h3>Follow us</h3>
+                <div class="fot-bx">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+
+                    <button class="">
+                        linkedin
+                    </button> <button class="">
+                        instagram
+                    </button>
+                </div>
+            </div>
+
+            <div class="fot5">
+                <h3>
+                    Write us
+
+                </h3>
+                <button>
+                    newbiz@studioclim.com
+                </button>
+            </div>
+        </div>
+
+        <div class="clim2">
+            <div class="clim3">
+                <h1>Clim</h1>
+                <div class="clim1"></div>
+                <h1>Studio</h1>
+            </div>
+        </div>
+        <div class="fot7">
+            <div class="fot8">
+                <span>
+                    Cookies & Privacy
+                </span>
+                <span>All Rights Reserved &#169; CLIM STUDIO ANIMATION 2024</span>
+            </div>
+            <div class="fot9">
+                <span>Back To Top</span>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="clim.js">
+
+    </script>
+
+    <!-- <script>
+        const carousel = document.querySelector('.carousel');
+        const track = document.querySelector('.carousel-track');
+        const customButton = document.querySelector('.custom-button');
+        let isDragging = false;
+        let startPos = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let animationID;
+        let autoScrollInterval;
+
+       
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                currentTranslate -= 0.5;  // Reduced translation speed (slower)
+                if (Math.abs(currentTranslate) >= track.scrollWidth - carousel.offsetWidth) {
+                    currentTranslate = 0;
+                }
+                track.style.transform = `translateX(${currentTranslate}px)`;
+            }, 50); 
+        }
+
+       
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+       
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+
+        carousel.addEventListener('mousedown', startDrag);
+        carousel.addEventListener('mousemove', dragging);
+        carousel.addEventListener('mouseup', endDrag);
+        carousel.addEventListener('mouseleave', endDrag);
+
+        carousel.addEventListener('touchstart', startDrag);
+        carousel.addEventListener('touchmove', dragging);
+        carousel.addEventListener('touchend', endDrag);
+
+       
+        function startDrag(e) {
+            isDragging = true;
+            startPos = getPositionX(e);
+            prevTranslate = currentTranslate;
+            cancelAnimationFrame(animationID);
+            stopAutoScroll();
+        }
+
+        
+        function dragging(e) {
+            if (!isDragging) return;
+            const currentPos = getPositionX(e);
+            const movement = (currentPos - startPos) * 0.5;  
+            currentTranslate = prevTranslate + movement;
+            track.style.transform = `translateX(${currentTranslate}px)`;
+        }
+
+        
+        function endDrag() {
+            isDragging = false;
+            startAutoScroll();
+        }
+
+      
+        function getPositionX(e) {
+            return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        }
+
+        
+        carousel.addEventListener('mouseenter', () => {
+            customButton.style.display = 'block';
+        });
+
+       
+        carousel.addEventListener('mouseleave', () => {
+            customButton.style.display = 'none';
+        });
+
+       
+        carousel.addEventListener('mousemove', (event) => {
+            const containerRect = carousel.getBoundingClientRect();
+            const cursorX = event.clientX - containerRect.left;
+            const cursorY = event.clientY - containerRect.top;
+
+            const buttonWidth = customButton.offsetWidth;
+            const buttonHeight = customButton.offsetHeight;
+
+            
+            customButton.style.left = `${Math.min(
+                Math.max(cursorX - buttonWidth / 2, 0),
+                containerRect.width - buttonWidth
+            )}px`;
+            customButton.style.top = `${Math.min(
+                Math.max(cursorY - buttonHeight / 2, 0),
+                containerRect.height - buttonHeight
+            )}px`;
+        });
+
+       
+        startAutoScroll();
+    </script> -->
+
+    <!-- <script>
+        const videoCon = document.querySelector('.video-con');
+        const videos = document.querySelector('.videos');
+
+        let startX, scrollLeft;
+
+        videoCon.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            videoCon.classList.add('dragging');
+            videos.classList.add('dragging');
+            startX = e.pageX - videoCon.offsetLeft;
+            scrollLeft = videoCon.scrollLeft;
+        });
+
+        videoCon.addEventListener('mouseleave', () => {
+            isDragging = false;
+            videos.classList.remove('dragging');
+        });
+
+        videoCon.addEventListener('mouseup', () => {
+            isDragging = false;
+            videos.classList.remove('dragging');
+        });
+
+        videoCon.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - videoCon.offsetLeft;
+            const walk = (x - startX) * 2;
+            videoCon.scrollLeft = scrollLeft - walk;
+        });
+    </script> -->
+
+
+    <!-- <script>
+        const videoContainer = document.querySelector('.video-container');
+        const videos = document.querySelector('.videos');
+
+
+        let startX, scrollLeft;
+
+        videoContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            videoContainer.classList.add('dragging');
+            videos.classList.add('dragging');
+            startX = e.pageX - videoContainer.offsetLeft;
+            scrollLeft = videoContainer.scrollLeft;
+        });
+
+        videoContainer.addEventListener('mouseleave', () => {
+            isDragging = false;
+            videos.classList.remove('dragging');
+        });
+
+        videoContainer.addEventListener('mouseup', () => {
+            isDragging = false;
+            videos.classList.remove('dragging');
+        });
+
+        videoContainer.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - videoContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            videoContainer.scrollLeft = scrollLeft - walk;
+        });
+
+
+    </script> -->
+
+
+
+</body>
+
+</html>
